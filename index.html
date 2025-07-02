@@ -114,7 +114,8 @@
         .post-link:hover {
             text-decoration: underline;
         }
-
+        
+     
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .section-title {
@@ -167,6 +168,15 @@
     </style>
 </head>
 <body>
+    <!-- Loading message for embedded tweets -->
+    <div id="tweet-loader" style="width:100%;text-align:center;padding:12px 0;background:#f9fafb;color:#3b82f6;font-weight:600;position:fixed;top:0;left:0;z-index:1000;transition:opacity 0.5s;">Loading embedded tweets…</div>
+    <script>
+        setTimeout(function() {
+            var loader = document.getElementById('tweet-loader');
+            if(loader) loader.style.opacity = '0';
+            setTimeout(function(){ if(loader) loader.style.display = 'none'; }, 600);
+        }, 2500);
+    </script>
     <!-- COVER PAGE -->
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh;">
         <img src="frontcover.png" alt="Shift Monthly Analytics Report Cover" style="max-width: 350px; width: 100%; margin-bottom: 32px;" />
@@ -176,12 +186,76 @@
         <h1 class="section-title">Shift RWA Monthly Analytics Overview</h1>
         <p class="date-range">Statistics For May 30th till July 2nd</p>
 
-        <!-- Analytics Card: Number of Posts -->
+        <!-- Analytics Card: Total Spent -->
         <div class="analytics-card">
-            <div class="card-heading">Number of Posts</div>
+            <div class="card-heading">Total Spent</div>
             <div class="card-content">
-                <p>Total posts published this month.</p>
-                <div class="card-metric">28</div>
+                <p>Total marketing spend this month.</p>
+                <div class="card-metric">$1,300</div>
+                <div class="sub-metric-group">
+                    <div class="sub-metric">
+                        <div class="sub-metric-value">$500</div>
+                        <div class="sub-metric-label">Zealy</div>
+                    </div>
+                    <div class="sub-metric">
+                        <div class="sub-metric-value">$800</div>
+                        <div class="sub-metric-label">Yap Market</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Card: Smart Followers Growth -->
+        <div class="analytics-card">
+            <div class="card-heading">Smart Followers Growth</div>
+            <div class="card-content">
+                <p>Increase in verified followers this month.</p>
+                <div class="card-metric">60%</div>
+                <div class="card-description">Current number of smart followers: 909.</div>
+            </div>
+        </div>
+
+        <!-- Analytics Card: Discord Community Growth -->
+        <div class="analytics-card">
+            <div class="card-heading">Discord Community</div>
+            <div class="card-content">
+                <p>Key statistics for our Discord community.</p>
+                <div class="sub-metric-group">
+                    <div class="sub-metric">
+                        <div class="sub-metric-value">733</div>
+                        <div class="sub-metric-label">Current Members</div>
+                    </div>
+                    <div class="sub-metric">
+                        <div class="sub-metric-value">695</div>
+                        <div class="sub-metric-label">New Members</div>
+                    </div>
+                    <div class="sub-metric">
+                        <div class="sub-metric-value">1,847%</div>
+                        <div class="sub-metric-label">Growth</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Card: Telegram Community Growth -->
+        <div class="analytics-card">
+            <div class="card-heading">Telegram Community</div>
+            <div class="card-content">
+                <p>Key statistics for our Telegram community.</p>
+                <div class="sub-metric-group">
+                    <div class="sub-metric">
+                        <div class="sub-metric-value">3,740</div>
+                        <div class="sub-metric-label">Current Members</div>
+                    </div>
+                    <div class="sub-metric">
+                        <div class="sub-metric-value">342</div>
+                        <div class="sub-metric-label">New Members</div>
+                    </div>
+                    <div class="sub-metric">
+                        <div class="sub-metric-value">10.1%</div>
+                        <div class="sub-metric-label">Growth</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -203,13 +277,12 @@
             </div>
         </div>
 
-        <!-- Analytics Card: Smart Followers Growth -->
+        <!-- Analytics Card: Number of Posts -->
         <div class="analytics-card">
-            <div class="card-heading">Smart Followers Growth</div>
+            <div class="card-heading">Number of Posts</div>
             <div class="card-content">
-                <p>Increase in verified followers this month.</p>
-                <div class="card-metric">60%</div>
-                <div class="card-description">Current number of smart followers: 909.</div>
+                <p>Total posts published this month.</p>
+                <div class="card-metric">28</div>
             </div>
         </div>
 
@@ -219,51 +292,19 @@
             <div class="card-content">
                 <p>Total number of live spaces and streams conducted this month.</p>
                 <div class="card-metric">3</div>
-                <div class="card-description">
-                    Spaces:
-                    <!-- Twitter embed for Post 1 -->
-                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚨 X Space Alert 🚨<br><br>Meet Shift: The RWA Engine for DeFi<br><br>📅 Tuesday, 3 June ⏰ 13:00 UTC<br><br>Set Reminder → <a href="https://t.co/k4yaffYIjz">https://t.co/k4yaffYIjz</a><br><br>We&#39;re breaking down how stock value moves on-chain, and why Asset-Referenced Tokens (ARTs) are the future of tokenized finance.<br><br>🎙️ Featuring:… <a href="https://t.co/s4t6ba3RZl">pic.twitter.com/s4t6ba3RZl</a></p>&mdash; SHIFT (@ShiftRWA) <a href="https://twitter.com/ShiftRWA/status/1928422841747161233?ref_src=twsrc%5Etfw">May 30, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚨X Space Alert 🚨Stonks But Onchain<br><br>📅 Thursday, 12 June ⏰ 12:00 UTC<br><br>Set Reminder → <a href="https://t.co/fijKvWEIzJ">https://t.co/fijKvWEIzJ</a><br><br>We're unpacking how the stock market is coming on-chain:<br><br>🔹Takes on the GENIUS Act and US regulation<br>🔹CRCL's HUGE IPO <br>🔹Who on-chain stocks are really for<br>🔹Other… <a href="https://t.co/sAdpyMemZV">pic.twitter.com/sAdpyMemZV</a></p>&mdash; SHIFT (@ShiftRWA) <a href="https://twitter.com/ShiftRWA/status/1932423856129556934?ref_src=twsrc%5Etfw">June 10, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚨 X Space Alert 🚨 Are Crypto Stocks the New Altcoins?<br><br>📅 Tuesday, 24 June ⏰ 12:00 UTC<br>Set Reminder → <a href="https://t.co/E0ShbtyRyw">https://t.co/E0ShbtyRyw</a> <br><br>We're diving into the new wave of crypto stocks and what it means for DeFi:<br><br>🔹 Circle almost 3x'd since IPO<br>🔹 Bitcoin Treasury Summer is in full… <a href="https://t.co/ry14rqNhmo">pic.twitter.com/ry14rqNhmo</a></p>&mdash; SHIFT (@ShiftRWA) <a href="https://twitter.com/ShiftRWA/status/1937142919044931643?ref_src=twsrc%5Etfw">June 23, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
+                                    <div class="card-description">
+                        Spaces:
+                        <div style="padding-left: 20px;">
+                            <!-- Twitter embed for Post 1 -->
+                            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚨 X Space Alert 🚨<br><br>Meet Shift: The RWA Engine for DeFi<br><br>📅 Tuesday, 3 June ⏰ 13:00 UTC<br><br>Set Reminder → <a href="https://t.co/k4yaffYIjz">https://t.co/k4yaffYIjz</a><br><br>We&#39;re breaking down how stock value moves on-chain, and why Asset-Referenced Tokens (ARTs) are the future of tokenized finance.<br><br>🎙️ Featuring:… <a href="https://t.co/s4t6ba3RZl">pic.twitter.com/s4t6ba3RZl</a></p>&mdash; SHIFT (@ShiftRWA) <a href="https://twitter.com/ShiftRWA/status/1928422841747161233?ref_src=twsrc%5Etfw">May 30, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚨X Space Alert 🚨Stonks But Onchain<br><br>📅 Thursday, 12 June ⏰ 12:00 UTC<br><br>Set Reminder → <a href="https://t.co/fijKvWEIzJ">https://t.co/fijKvWEIzJ</a><br><br>We're unpacking how the stock market is coming on-chain:<br><br>🔹Takes on the GENIUS Act and US regulation<br>🔹CRCL's HUGE IPO <br>🔹Who on-chain stocks are really for<br>🔹Other… <a href="https://t.co/sAdpyMemZV">pic.twitter.com/sAdpyMemZV</a></p>&mdash; SHIFT (@ShiftRWA) <a href="https://twitter.com/ShiftRWA/status/1932423856129556934?ref_src=twsrc%5Etfw">June 10, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚨 X Space Alert 🚨 Are Crypto Stocks the New Altcoins?<br><br>📅 Tuesday, 24 June ⏰ 12:00 UTC<br>Set Reminder → <a href="https://t.co/E0ShbtyRyw">https://t.co/E0ShbtyRyw</a> <br><br>We're diving into the new wave of crypto stocks and what it means for DeFi:<br><br>🔹 Circle almost 3x'd since IPO<br>🔹 Bitcoin Treasury Summer is in full… <a href="https://t.co/ry14rqNhmo">pic.twitter.com/ry14rqNhmo</a></p>&mdash; SHIFT (@ShiftRWA) <a href="https://twitter.com/ShiftRWA/status/1937142919044931643?ref_src=twsrc%5Etfw">June 23, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                    </div>
             </div>
         </div>
 
-        <!-- Analytics Card: Telegram Community Growth -->
-        <div class="analytics-card">
-            <div class="card-heading">Telegram Community</div>
-            <div class="card-content">
-                <p>Key statistics for our Telegram community.</p>
-                <div class="sub-metric-group">
-                    <div class="sub-metric">
-                        <div class="sub-metric-value">3,740</div>
-                        <div class="sub-metric-label">Current Members</div>
-                    </div>
-                    <div class="sub-metric">
-                        <div class="sub-metric-value">342</div>
-                        <div class="sub-metric-label">New Members</div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Analytics Card: Discord Community Growth -->
-        <div class="analytics-card">
-            <div class="card-heading">Discord Community</div>
-            <div class="card-content">
-                <p>Key statistics for our Discord community.</p>
-                <div class="sub-metric-group">
-                    <div class="sub-metric">
-                        <div class="sub-metric-value">733</div>
-                        <div class="sub-metric-label">Current Members</div>
-                    </div>
-                    <div class="sub-metric">
-                        <div class="sub-metric-value">695</div>
-                        <div class="sub-metric-label">New Members</div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Analytics Card: Zealy Community Growth -->
         <div class="analytics-card">
@@ -301,12 +342,14 @@
                 <div class="card-metric">32,000</div>
                 <div class="card-description">
                     Best Posts:
-                    <!-- Twitter embed for Post 1 -->
-                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Real-world assets are the next chapter for DeFi.<br><br>Wrote about where tokenization stands today, and how we can make it actually work on-chain.<br><br>Check it out 👇 <a href="https://t.co/qStZb6Pr9i">pic.twitter.com/qStZb6Pr9i</a></p>&mdash; Michael Bar-Zeev (@micobz) <a href="https://twitter.com/micobz/status/1935973600349049178?ref_src=twsrc%5Etfw">June 20, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <a href="https://x.com/micobz/status/1935973600349049178" target="_blank" class="post-link">Post 1 (3.8k views)</a>
-                    <!-- Twitter embed for Post 2 -->
-                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Tokenized bonds had an incredible 2024, growing TVL by over 400%.<br><br>But let’s face it, tokenized bonds are mostly an institutional play.<br><br>Degens don’t want to hold boring bonds, they want to trade Tesla, NVIDIA and <a href="https://twitter.com/Strategy?ref_src=twsrc%5Etfw">@strategy</a> on-chain.<br><br>RWA is going retail in 2025. <a href="https://t.co/FrpJUmp3Uo">pic.twitter.com/FrpJUmp3Uo</a></p>&mdash; Michael Bar-Zeev (@micobz) <a href="https://twitter.com/micobz/status/1932761666942312589?ref_src=twsrc%5Etfw">June 11, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <a href="https://x.com/micobz/status/1932761666942312589" target="_blank" class="post-link">Post 2 (3k views)</a>
+                    <div style="padding-left: 20px;">
+                        <!-- Twitter embed for Post 1 -->
+                        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Real-world assets are the next chapter for DeFi.<br><br>Wrote about where tokenization stands today, and how we can make it actually work on-chain.<br><br>Check it out 👇 <a href="https://t.co/qStZb6Pr9i">pic.twitter.com/qStZb6Pr9i</a></p>&mdash; Michael Bar-Zeev (@micobz) <a href="https://twitter.com/micobz/status/1935973600349049178?ref_src=twsrc%5Etfw">June 20, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <a href="https://x.com/micobz/status/1935973600349049178" target="_blank" class="post-link">Post 1 (3.8k views)</a>
+                        <!-- Twitter embed for Post 2 -->
+                        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Tokenized bonds had an incredible 2024, growing TVL by over 400%.<br><br>But let's face it, tokenized bonds are mostly an institutional play.<br><br>Degens don't want to hold boring bonds, they want to trade Tesla, NVIDIA and <a href="https://twitter.com/Strategy?ref_src=twsrc%5Etfw">@strategy</a> on-chain.<br><br>RWA is going retail in 2025. <a href="https://t.co/FrpJUmp3Uo">pic.twitter.com/FrpJUmp3Uo</a></p>&mdash; Michael Bar-Zeev (@micobz) <a href="https://twitter.com/micobz/status/1932761666942312589?ref_src=twsrc%5Etfw">June 11, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <a href="https://x.com/micobz/status/1932761666942312589" target="_blank" class="post-link">Post 2 (3k views)</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -319,12 +362,14 @@
                 <div class="card-metric">10,500</div>
                 <div class="card-description">
                     Best Posts:
-                    <!-- Twitter embed for Post 1 -->
-                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Congrats to <a href="https://twitter.com/circle?ref_src=twsrc%5Etfw">@circle</a> on becoming the first stablecoin issuer listed on the NYSE ($CRCL).<br><br>Wall Street can finally get exposure to the stablecoin boom.<br><br>But billions of individuals around the world cannot.<br><br>Imagine this :<br><br>- Tokenize the value of <a href="https://twitter.com/search?q=%24CRCL&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$CRCL</a><br>– Traded 24/7 on-chain<br>– LP… <a href="https://t.co/MFDFk3j8qs">pic.twitter.com/MFDFk3j8qs</a></p>&mdash; Bar Elkis (@defielk) <a href="https://twitter.com/defielk/status/1935656323720343837?ref_src=twsrc%5Etfw">June 19, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <a href="https://x.com/defielk/status/1935656323720343837" target="_blank" class="post-link">Post 1 (2.5k views)</a>
-                    <!-- Twitter embed for Post 2 -->
-                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Congrats to <a href="https://twitter.com/circle?ref_src=twsrc%5Etfw">@circle</a> on becoming the first stablecoin issuer listed on the NYSE ($CRCL).<br><br>Wall Street can finally get exposure to the stablecoin boom.<br><br>But billions of individuals around the world cannot.<br><br>Imagine this :<br><br>- Tokenize the value of <a href="https://twitter.com/search?q=%24CRCL&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$CRCL</a><br>– Traded 24/7 on-chain<br>– LP… <a href="https://t.co/MFDFk3j8qs">pic.twitter.com/MFDFk3j8qs</a></p>&mdash; Bar Elkis (@defielk) <a href="https://twitter.com/defielk/status/1935656323720343837?ref_src=twsrc%5Etfw">June 19, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <a href="https://x.com/defielk/status/1930540868143821260" target="_blank" class="post-link">Post 2 (2.3k views)</a>
+                    <div style="padding-left: 20px;">
+                        <!-- Twitter embed for Post 1 -->
+                        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Congrats to <a href="https://twitter.com/circle?ref_src=twsrc%5Etfw">@circle</a> on becoming the first stablecoin issuer listed on the NYSE ($CRCL).<br><br>Wall Street can finally get exposure to the stablecoin boom.<br><br>But billions of individuals around the world cannot.<br><br>Imagine this :<br><br>- Tokenize the value of <a href="https://twitter.com/search?q=%24CRCL&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$CRCL</a><br>– Traded 24/7 on-chain<br>– LP… <a href="https://t.co/MFDFk3j8qs">pic.twitter.com/MFDFk3j8qs</a></p>&mdash; Bar Elkis (@defielk) <a href="https://twitter.com/defielk/status/1935656323720343837?ref_src=twsrc%5Etfw">June 19, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <a href="https://x.com/defielk/status/1935656323720343837" target="_blank" class="post-link">Post 1 (2.5k views)</a>
+                        <!-- Twitter embed for Post 2 -->
+                        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Congrats to <a href="https://twitter.com/circle?ref_src=twsrc%5Etfw">@circle</a> on becoming the first stablecoin issuer listed on the NYSE ($CRCL).<br><br>Wall Street can finally get exposure to the stablecoin boom.<br><br>But billions of individuals around the world cannot.<br><br>Imagine this :<br><br>- Tokenize the value of <a href="https://twitter.com/search?q=%24CRCL&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$CRCL</a><br>– Traded 24/7 on-chain<br>– LP… <a href="https://t.co/MFDFk3j8qs">pic.twitter.com/MFDFk3j8qs</a></p>&mdash; Bar Elkis (@defielk) <a href="https://twitter.com/defielk/status/1935656323720343837?ref_src=twsrc%5Etfw">June 19, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <a href="https://x.com/defielk/status/1930540868143821260" target="_blank" class="post-link">Post 2 (2.3k views)</a>
+                    </div>
                 </div>
             </div>
         </div>
